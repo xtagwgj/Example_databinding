@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <!--定义页面要使用到的数据 两种不同的实体类型-->
+    <data>
+
+        <!-- variable表示一个变量。name是自己定义的可以更改；type必须是类的全路径，不然会报错 -->
+        <variable
+            name="student"
+            type="com.xtagwgj.dbindingsample.entity.Student" />
+
+        <variable
+            name="teacher"
+            type="com.xtagwgj.dbindingsample.entity.Teacher" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--
+            android:text="@{student}" 要显示的数据信息
+            -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{student.toString()}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{teacher.toString()}" />
+
+    </LinearLayout>
+
+</layout>
