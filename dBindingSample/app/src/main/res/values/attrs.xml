@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义的seekbar-->
+    <declare-styleable name="CustomSeekBar">
+        <attr name="cs_text_size" format="reference|dimension" />
+        <attr name="cs_selected_color" format="reference|color" />
+        <attr name="cs_normal_textcolor" format="reference|color" />
+        <attr name="cs_unselected_color" format="reference|color" />
+        <attr name="cs_button_res" format="reference|integer" />
+        <attr name="cs_split_color" format="reference|color" />
+        <attr name="cs_text_array" format="string|reference" />
+        <attr name="cs_leftText_by_pos" format="reference|boolean" />
+        <attr name="cs_max_stalls" format="integer" />
+        <attr name="cs_selected_index" format="integer" />
+    </declare-styleable>
+</resources>

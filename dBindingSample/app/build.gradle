@@ -37,4 +37,5 @@ dependencies {
 
     kapt "com.android.databinding:compiler:$android_plugin_version"
     compile "org.jetbrains.anko:anko-commons:$anko_version"
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }

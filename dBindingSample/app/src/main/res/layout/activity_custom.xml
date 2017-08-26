@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CustomActivity">
+
+    <data>
+
+        <variable
+            name="seekIndex"
+            type="java.lang.Integer" />
+
+        <!--seekBar变化的监听-->
+        <variable
+            name="seekListener"
+            type="com.xtagwgj.dbindingsample.widget.CustomSeekBar.OnSeekChangeListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text='@{seekIndex+""}' />
+
+        <com.xtagwgj.dbindingsample.widget.CustomSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="48dp"
+            android:layout_marginStart="48dp"
+            app:OnSeekChangeListener="@{seekListener}"
+            app:cs_max_stalls="3"
+            app:cs_selected_index="@={seekIndex}"
+            app:cs_text_size="12sp" />
+
+    </LinearLayout>
+</layout>

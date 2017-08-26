@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".EditTextActivity">
+
+    <data>
+
+        <variable
+            name="student"
+            type="com.xtagwgj.dbindingsample.entity.Student" />
+
+        <variable
+            name="hintText"
+            type="java.lang.String" />
+
+        <variable
+            name="textSize"
+            type="java.lang.Float" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{student.name.get()}"
+            android:visibility="@{student.name.get().length &gt; 0 ? View.VISIBLE:View.GONE}" />
+
+        <!--
+            android:textSize="@{textSize}"
+            -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@{hintText}"
+            android:text="@={student.name.get()}"
+            android:textColor="@{student.name.get().length &lt; 5 ? @color/colorAccent:@android:color/black}"
+            android:textSize="@{textSize}" />
+
+    </LinearLayout>
+
+</layout>
