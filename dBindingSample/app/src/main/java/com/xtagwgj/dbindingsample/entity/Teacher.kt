@@ -18,7 +18,9 @@ data class Teacher(
         get() = field
         set(value) {
             field = value
-            //告知数据被更新了，及时修改显示数据
+            //数据发生变化时还是需要手动发出通知。
+            // 通过调用notifyPropertyChanged(BR.name)来通知系统 BR.name 这个 entry 的数据已经发生变化，
+            // 需要更新 UI。
             notifyPropertyChanged(BR.name)
         }
     var age: Int = 38

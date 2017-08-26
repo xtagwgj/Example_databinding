@@ -2,15 +2,20 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
+    tools:context=".SimpleActivity">
 
     <!--定义页面要使用到的数据 两种不同的实体类型-->
     <data>
+        <!--使用import的方式导入类，在变量的定义中可以不用写全路径-->
+        <!--如果有多个同名的类可以使用alias进行区分，如果只有单个的或就可以省略alias不写-->
+        <import
+            alias="Student"
+            type="com.xtagwgj.dbindingsample.entity.Student" />
 
         <!-- variable表示一个变量。name是自己定义的可以更改；type必须是类的全路径，不然会报错 -->
         <variable
             name="student"
-            type="com.xtagwgj.dbindingsample.entity.Student" />
+            type="Student" />
 
         <variable
             name="teacher"
@@ -28,12 +33,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{student.toString()}" />
+            android:text="@{String.valueOf(student.money.get())}" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{teacher.toString()}" />
+            android:text="@{String.valueOf(teacher.money)}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="changeMoney"
+            android:text="改变金额" />
 
     </LinearLayout>
 

@@ -3,6 +3,7 @@ package com.xtagwgj.dbindingsample
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import com.xtagwgj.dbindingsample.databinding.ActivitySimpleBinding
 import com.xtagwgj.dbindingsample.entity.Student
 import com.xtagwgj.dbindingsample.entity.Teacher
@@ -12,6 +13,9 @@ import com.xtagwgj.dbindingsample.entity.Teacher
  */
 class SimpleActivity : AppCompatActivity() {
 
+    val student = Student(2)
+    val teacher = Teacher(111)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -20,10 +24,21 @@ class SimpleActivity : AppCompatActivity() {
         val binding = DataBindingUtil.setContentView<ActivitySimpleBinding>(this, R.layout.activity_simple)
 
         //初始化数据并绑定
-        binding.student = Student(2)
+        binding.student = student
         //绑定数据的另外一种方式
         //binding.setVariable(BR.student,Student(3))
 
-        binding.teacher = Teacher(0)
+        binding.teacher = teacher
+
+
     }
+
+    fun changeMoney(view: View) {
+
+        student.money.set(Math.random() * 1000)
+        teacher.money = Math.random() * 10000
+
+    }
+
+
 }
