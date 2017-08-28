@@ -46,7 +46,7 @@ data class Teacher(
         }
 
     override fun toString(): String {
-        return "Student(id=$id,name=$name,age=$age,sex=$sex,money=$money)"
+        return "Teacher(id=$id,name=$name,age=$age,sex=$sex,money=$money)"
     }
 
 }
